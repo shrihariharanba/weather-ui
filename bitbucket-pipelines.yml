@@ -1,0 +1,20 @@
+pipelines:
+  default:
+    - step:
+        name: Build node
+        image: node:14.18.1-alpine
+        script:
+          - cd /usr/src/app
+          - cp package.json package-lock.json ./
+          - npm install
+    - step:
+        name: Build nginx
+        image: nginx:1.17.1-alpine
+        script:
+          - cp nginx.conf /etc/nginx/nginx.conf
+          - cp /usr/src/app/dist/weather-ui /usr/share/nginx/html
+          - docker login test.domain.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+          - docker build -t <username:image_name:tag> .
+          - docker push <username:image_name:tag>
+        services:
+          - docker
