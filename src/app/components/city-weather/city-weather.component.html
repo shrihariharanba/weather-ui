@@ -1,0 +1,22 @@
+<mat-card class="custom-card">
+  <mat-card-title>City Weather Forecast</mat-card-title>
+  <br/>
+  <form class="city-form">
+    <mat-form-field class="city-full-width" appearance="fill">
+      <mat-label>City</mat-label>
+      <input matInput placeholder="Ex. London" [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+  </form>
+  <mat-card-actions align="end" class="action-button">
+    <button mat-raised-button color="accent" (click)="onSubmit()">Submit</button>
+  </mat-card-actions>
+</mat-card>
+<br/>
+<div *ngIf="showData; else errorTemplate">
+  <app-date-card [forecasts]="data"></app-date-card>
+</div>
+<ng-template #errorTemplate>
+  <div class="errorTemplate"><h2>Error Occurred</h2></div>
+</ng-template>
+
+

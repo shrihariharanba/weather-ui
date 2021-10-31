@@ -1,0 +1,18 @@
+<ul style="list-style-type:none;">
+  <li *ngFor="let entry of data | keyvalue">
+    <mat-card class="custom-card">
+      <mat-card-title>{{entry.key}}</mat-card-title>
+      <ul style="list-style-type:none;">
+        <li class="horizontal-li" *ngFor="let val of entry.value">
+          {{val.windSpeed}}m/s
+          <br/><mat-icon style="transform: rotate({{val.degree}}deg)">arrow_upward</mat-icon>
+          <br/>{{val.timeText}}
+          <br/><img src="http://openweathermap.org/img/w/{{val.icon}}.png">
+          <br/>{{val.highTemp}}&deg; - {{val.lowTemp}}&deg;
+          <br/>{{val.climate}}
+          <br/>{{val.description}}
+        </li>
+      </ul>
+    </mat-card>
+  </li>
+</ul>

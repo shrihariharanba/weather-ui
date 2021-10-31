@@ -1,0 +1,25 @@
+.custom-card {
+  max-width: 30%;
+  margin-top: 5%;
+  margin-left: 5%;
+  background-color: honeydew;
+}
+
+
+.city-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.city-full-width {
+  width: 100%;
+}
+
+.action-button {
+  margin-right: 0rem;
+}
+
+.errorTemplate {
+  margin-left: 5%
+}

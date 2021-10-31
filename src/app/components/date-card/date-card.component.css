@@ -1,0 +1,13 @@
+.custom-card {
+  max-width: 70%;
+  margin-top: 5%;
+  margin-left: 3%;
+  height: 13rem;
+  background-color: lightblue;
+}
+
+.horizontal-li {
+  float: left;
+  text-align: center;
+  margin-left: 1rem;
+}
